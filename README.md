@@ -2,8 +2,7 @@
 ## KHOA CÔNG NGHỆ THÔNG TIN
 ---
 ### BÀI THỰC HÀNH SỐ 2: THU THẬP, LƯU TRỮ VÀ TIỀN XỬ LÝ DỮ LIỆU IoT
-* **Học phần:** IoT và Ứng dụng (Mã học phần: INT14149)
-* **Thời lượng:** 04 tiết thực hành
+* **Môn học:** IoT và Ứng dụng (Mã học phần: INT14149)
 * **Sinh viên thực hiện:** B24DCVN086
 * **Mã sinh viên:** B24DCVN086
 
