@@ -6,7 +6,6 @@
 * **Thời lượng:** 04 tiết thực hành
 * **Sinh viên thực hiện:** B24DCVN086
 * **Mã sinh viên:** B24DCVN086
-* **Chuẩn đầu ra:** CLO1 (chính), CLO2 (phụ)
 
 ---
 
@@ -36,14 +35,10 @@ Bai_thuc_hanh_2_IoT_B24DCVN086/
 │   └── assets/icons/              # Bộ icon SVG giao diện dashboard
 ├── data/
 │   ├── telemetry_raw.csv          # File dữ liệu thô lưu trữ dự phòng (CSV Fallback)
-│   ├── telemetry_preprocessed.csv # File dữ liệu sau khi trải qua tiền xử lý
 │   └── system_metrics.json        # Snapshot số liệu thống kê độ trễ, số lượng gói tin
 ├── docker/
 │   └── docker-compose.yml         # File cấu hình khởi chạy InfluxDB 2.x và Mosquitto bằng Docker
-├── report/
-│   └── Bao_cao_Bai_thuc_hanh_2_IoT_B24DCVN086.docx  # Báo cáo Word hoàn chỉnh (4-6 trang)
 ├── config.py                      # Cấu hình tập trung thông số hệ thống và ngưỡng cảm biến
-├── generate_sample_data.py        # Script tạo 120 mẫu dữ liệu giả lập phục vụ kiểm thử nhanh
 ├── requirements.txt               # Danh sách thư viện Python cần thiết
 └── README.md                      # Tài liệu hướng dẫn sử dụng dự án
 ```
@@ -87,7 +82,7 @@ pip install -r requirements.txt
    * Đồng bộ thời gian thực từ máy chủ NTP `pool.ntp.org`.
    * Kết nối tới MQTT Broker `broker.hivemq.com:1883`.
    * Định kỳ 5 giây, bản tin JSON sẽ được publish lên topic `lab2_B24DCVN086/esp32/telemetry`.
-   * Đèn LED xanh (Pin 2) sẽ chớp sáng khi gửi bản tin thành công.
+   * Đèn LED  (Pin 2) sẽ chớp sáng khi gửi bản tin thành công.
 
 ---
 
@@ -125,7 +120,7 @@ Mở Terminal và khởi chạy giao diện Web:
 streamlit run dashboard/app.py
 ```
 Trình duyệt sẽ tự động mở giao diện giám sát tại địa chỉ:  
-👉 **`http://localhost:8501`**
+ **`http://localhost:8501`**
 
 Giao diện bao gồm 4 Tab chức năng bám sát chuẩn đề bài:
 * **Tab 1: Giám Sát Thời Gian Thực:** 5 thẻ số đo tức thời (Nhiệt độ, Độ ẩm, Khoảng cách, RSSI, Độ trễ) và 2 đồ thị chuỗi thời gian liên tục.
@@ -159,9 +154,3 @@ Giao diện bao gồm 4 Tab chức năng bám sát chuẩn đề bài:
    * Tái lấy mẫu (Resampling) từ 5 giây sang 1 phút giúp giảm tới **94.5%** dung lượng lưu trữ cần thiết.
 
 ---
-
-## 7. BÁO CÁO BÀI THỰC HÀNH NỘP BÀI
-File báo cáo Word hoàn chỉnh (đúng mẫu định dạng 4-6 trang, chuẩn font Times New Roman, tiếng Việt có dấu 100%) nằm tại thư mục:  
-👉 **`report/Bao_cao_Bai_thuc_hanh_2_IoT_B24DCVN086.docx`**
-
-File báo cáo đã có sẵn 6 khung giữ chỗ nổi bật `【 CHỤP ẢNH TẠI ĐÂY 】` để sinh viên dán ảnh minh chứng kết quả thực nghiệm trước khi xuất file PDF nộp bài.
