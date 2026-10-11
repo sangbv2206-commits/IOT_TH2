@@ -1,0 +1,9 @@
+{
+  "total_received": 10,
+  "total_valid": 10,
+  "total_invalid": 0,
+  "dropped_packets": 0,
+  "packet_loss_rate": 0.0,
+  "average_latency_ms": 48.540000000000006,
+  "last_updated": "2026-10-11T04:22:33.332637+00:00"
+}

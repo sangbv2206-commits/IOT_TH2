@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # ==================== TIME-SERIES DATABASE (INFLUXDB 2.X) ====================
+  influxdb:
+    image: influxdb:2.7
+    container_name: iot_influxdb_lab2
+    restart: always
+    ports:
+      - "8086:8086"
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=adminpassword123
+      - DOCKER_INFLUXDB_INIT_ORG=iot_lab
+      - DOCKER_INFLUXDB_INIT_BUCKET=iot_raw
+      - DOCKER_INFLUXDB_INIT_RETENTION=7d
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=iot_lab2_token_B24DCVN086_secret123
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+      - influxdb_config:/etc/influxdb2
+
+  # ==================== OPTIONAL: LOCAL MOSQUITTO BROKER ====================
+  mosquitto:
+    image: eclipse-mosquitto:2.0
+    container_name: iot_mosquitto_lab2
+    restart: always
+    ports:
+      - "1883:1883"
+    command: mosquitto -c /mosquitto-no-auth.conf
+    # Chế độ cho phép kết nối không cần xác thực cục bộ
+
+volumes:
+  influxdb_data:
+  influxdb_config:
